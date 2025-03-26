@@ -37,6 +37,16 @@ const CMS_ICON_MAP = {
     "Snapchat": "snapchat",
     "Pinterest": "pinterest"
   };
+
+  const CMP_ICON_MAP = {
+    "Didomi": "didomi.svg",
+    "OneTrust": "onetrust.svg",
+    "Axeptio": "axeptio.svg",
+    "Cookiebot": "cookiebot.svg",
+    "Tarte au citron": "tarteaucitron.svg",
+    "Iubenda": "iubenda.svg"
+  };
+  
   
 
 // FILTRES
@@ -328,7 +338,20 @@ function injectScanResults(scanData, isLiveScan = true) {
   
       row.querySelector(".status-cell").textContent = scan.consent ? "✅" : "❌";
       row.querySelector(".version-cell").textContent = scan.consent ? scan.consentVersion || "–" : "–";
-      row.querySelector(".cmp-cell").textContent = !scan.cmp || scan.cmp === "Aucune" ? "❌" : scan.cmp;
+      const cmpCell = row.querySelector(".cmp-cell");
+
+if (scan.cmp && scan.cmp !== "Aucune") {
+  const cmpList = scan.cmp.split(",").map(c => c.trim());
+  cmpCell.innerHTML = cmpList.map(name => {
+    const iconFile = CMP_ICON_MAP[name];
+    return iconFile
+      ? `<img src="assets/icons/cmp/${iconFile}" alt="${name}" title="${name}" class="cmp-logo" style="margin-right: 6px;">`
+      : name;
+  }).join(" ");
+} else {
+  cmpCell.textContent = "❌";
+}
+
       row.querySelector(".cms-cell").textContent = scan.cms || "–";
       row.querySelector(".tms-cell").textContent = scan.tms || "–";
       row.querySelector(".pixels-cell").textContent = scan.pixels || "–";
