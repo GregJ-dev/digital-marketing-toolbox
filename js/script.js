@@ -159,52 +159,48 @@ function renderPendingResults(results, isLiveScan = true) {
     renderCurrentPage(isLiveScan);
   }
   
-function renderCurrentPage(isLiveScan = true) {
+  function renderCurrentPage(isLiveScan = true) {
     const totalPages = Math.ceil(paginatedData.length / resultsPerPage);
     const start = (currentPage - 1) * resultsPerPage;
     const end = start + resultsPerPage;
     const currentSlice = paginatedData.slice(start, end);
-
-    // 📊 Stats synthèse sur tout le dataset (pas seulement la page)
-const total = paginatedData.length;
-const withCMP = paginatedData.filter(r => r.cmp && r.cmp !== "Aucune").length;
-const v2 = paginatedData.filter(r => r.consentVersion === "v2").length;
-const avg = paginatedData.reduce((sum, r) => sum + (r.rgpdScore || 0), 0) / (total || 1);
-
-let statsHTML = `
-  <div style="background:#f9f9f9; padding:10px; border-radius:8px; margin-bottom:10px;">
-    <strong>📊 Synthèse :</strong>
-    <ul style="margin: 5px 0 0 0; padding-left: 20px; font-size: 14px;">
-      <li>CMP détectés : ${withCMP} / ${total} (${Math.round((withCMP / total) * 100)}%)</li>
-      <li>Consent Mode v2 : ${v2} / ${total} (${Math.round((v2 / total) * 100)}%)</li>
-      <li>Score moyen RGPD : ${avg.toFixed(1)} / 100</li>
-    </ul>
-  </div>
-`;
-
+  
+    // 📊 Stats synthèse
+    const total = paginatedData.length;
+    const withCMP = paginatedData.filter(r => r.cmp && r.cmp !== "Aucune").length;
+    const v2 = paginatedData.filter(r => r.consentVersion === "v2").length;
+    const avg = paginatedData.reduce((sum, r) => sum + (r.rgpdScore || 0), 0) / (total || 1);
+  
+    let statsHTML = `
+      <div style="background:#f9f9f9; padding:10px; border-radius:8px; margin-bottom:10px;">
+        <strong>📊 Synthèse :</strong>
+        <ul style="margin: 5px 0 0 0; padding-left: 20px; font-size: 14px;">
+          <li>CMP détectés : ${withCMP} / ${total} (${Math.round((withCMP / total) * 100)}%)</li>
+          <li>Consent Mode v2 : ${v2} / ${total} (${Math.round((v2 / total) * 100)}%)</li>
+          <li>Score moyen RGPD : ${avg.toFixed(1)} / 100</li>
+        </ul>
+      </div>
+    `;
   
     let tableHTML = `
       <p id="statusMessage">
         ${isLiveScan ? "🔍 Scan en cours..." : "📂 Scan historique rechargé"}
       </p>
       ${statsHTML}
-    <input id="filterInput" type="text" placeholder="🔎 Filtrer les résultats..." style="width: 100%; padding: 8px; margin-bottom: 10px; font-size: 14px; border-radius: 8px; border: 1px solid #ccc;">
-
-    <table id="resultTable">
-
+      <input id="filterInput" type="text" placeholder="🔎 Filtrer les résultats..." style="width: 100%; padding: 8px; margin-bottom: 10px; font-size: 14px; border-radius: 8px; border: 1px solid #ccc;">
+      <table id="resultTable">
         <thead>
-  <tr>
-    <th></th><th data-sort="domain">Domaine ${getSortArrow("domain")}</th>
-    <th data-sort="rgpdScore">Score ${getSortArrow("rgpdScore")}</th>
-    <th data-sort="consent">CoMo ${getSortArrow("consent")}</th>
-    <th data-sort="consentVersion">Version ${getSortArrow("consentVersion")}</th>
-    <th data-sort="cmp">CMP ${getSortArrow("cmp")}</th>
-    <th data-sort="cms">CMS ${getSortArrow("cms")}</th>
-    <th data-sort="tms">TMS ${getSortArrow("tms")}</th>
-    <th data-sort="pixels">Pixels ${getSortArrow("pixels")}</th>
-  </tr>
-</thead>
-
+          <tr>
+            <th></th><th data-sort="domain">Domaine ${getSortArrow("domain")}</th>
+            <th data-sort="rgpdScore">Score ${getSortArrow("rgpdScore")}</th>
+            <th data-sort="consent">CoMo ${getSortArrow("consent")}</th>
+            <th data-sort="consentVersion">Version ${getSortArrow("consentVersion")}</th>
+            <th data-sort="cmp">CMP ${getSortArrow("cmp")}</th>
+            <th data-sort="cms">CMS ${getSortArrow("cms")}</th>
+            <th data-sort="tms">TMS ${getSortArrow("tms")}</th>
+            <th data-sort="pixels">Pixels ${getSortArrow("pixels")}</th>
+          </tr>
+        </thead>
         <tbody>
     `;
   
@@ -214,7 +210,7 @@ let statsHTML = `
         const domain = url.hostname;
   
         tableHTML += `
-          <tr class="result-row" data-domain="${domain}" data-meta-description="${item.metaDescription || "Non détectée"}" onclick="toggleDetails(this)">
+          <tr class="result-row" data-domain="${domain}" data-meta-description="${item.metaDescription || "Non détectée"}" ${!isLiveScan ? `onclick="toggleDetails(this)"` : ""}>
             <td><button class='toggle-btn'>＋</button></td>
             <td><a href="${item.url}" target="_blank">${domain}</a></td>
             <td class="score-cell">⏳</td>
@@ -225,10 +221,9 @@ let statsHTML = `
             <td class="tms-cell">⏳</td>
             <td class="pixels-cell">⏳</td>
           </tr>
-          <tr class="details-row" style="display:none;">
+          <tr class="details-row" style="display: ${item.type === 'manual' ? 'table-row' : 'none'};">
             <td colspan="9" class="meta-cell" data-loaded="false">📝 Meta description : ...</td>
-        </tr>
-
+          </tr>
         `;
       } catch (err) {
         console.warn("❌ URL invalide :", item.url);
@@ -237,92 +232,92 @@ let statsHTML = `
   
     tableHTML += `</tbody></table>`;
   
-    // Bloc pagination
-    tableHTML += `
-      <div id="paginationControls" style="margin-top: 15px; text-align: center;">
-        <button id="prevPage" ${currentPage === 1 ? "disabled" : ""}>⬅️ Précédent</button>
-        <span style="margin: 0 10px;">Page ${currentPage} / ${totalPages}</span>
-        <button id="nextPage" ${currentPage === totalPages ? "disabled" : ""}>Suivant ➡️</button>
-      </div>
-    `;
+    if (total > 1 && isLiveScan) {
+      tableHTML += `
+        <div id="paginationControls" style="margin-top: 15px; text-align: center;">
+          <button id="prevPage" ${currentPage === 1 ? "disabled" : ""}>⬅️ Précédent</button>
+          <span style="margin: 0 10px;">Page ${currentPage} / ${totalPages}</span>
+          <button id="nextPage" ${currentPage === totalPages ? "disabled" : ""}>Suivant ➡️</button>
+        </div>
+      `;
+    }
   
     resultsDiv.innerHTML = tableHTML;
-
+  
+    // 🔍 Filtre live
     document.getElementById("filterInput").addEventListener("input", function () {
-        const value = this.value.toLowerCase();
-        document.querySelectorAll("#resultTable tbody tr.result-row").forEach(row => {
-          const text = row.innerText.toLowerCase();
-          row.style.display = text.includes(value) ? "" : "none";
-          const nextRow = row.nextElementSibling;
-          if (nextRow && nextRow.classList.contains("details-row")) {
-            nextRow.style.display = row.style.display;
-          }
-        });
+      const value = this.value.toLowerCase();
+      document.querySelectorAll("#resultTable tbody tr.result-row").forEach(row => {
+        const text = row.innerText.toLowerCase();
+        row.style.display = text.includes(value) ? "" : "none";
+        const nextRow = row.nextElementSibling;
+        if (nextRow && nextRow.classList.contains("details-row")) {
+          nextRow.style.display = row.style.display;
+        }
       });
-
-    // 🔽 Gérer le tri des colonnes
+    });
+  
+    // 🔽 Tri
     document.querySelectorAll("#resultTable th[data-sort]").forEach(th => {
-        th.style.cursor = "pointer";
-      
-        th.addEventListener("click", () => {
-          const key = th.dataset.sort;
-          const asc = sortState.key === key ? !sortState.asc : true;
-          sortState = { key, asc };
-      
-          paginatedData.sort((a, b) => {
-            let valA = a[key];
-            let valB = b[key];
-      
-            // ✅ Tri numérique pour score
-            if (key === "score" || key === "rgpdScore") {
-              valA = parseFloat(valA) || 0;
-              valB = parseFloat(valB) || 0;
-              return asc ? valA - valB : valB - valA;
-            }
-      
-            // ✅ Tri version v1 < v2 < non détecté
-            if (key === "version" || key === "consentVersion") {
-              const order = { "v1": 1, "v2": 2, "non détecté": 0 };
-              return asc
-                ? (order[valA] || 0) - (order[valB] || 0)
-                : (order[valB] || 0) - (order[valA] || 0);
-            }
-      
-            // ✅ Tri texte normal
-            valA = (valA || "").toString().toLowerCase();
-            valB = (valB || "").toString().toLowerCase();
-            return asc ? valA.localeCompare(valB) : valB.localeCompare(valA);
-          });
-      
-          renderCurrentPage(false); // rafraîchir sans toucher au dataset
+      th.style.cursor = "pointer";
+      th.addEventListener("click", () => {
+        const key = th.dataset.sort;
+        const asc = sortState.key === key ? !sortState.asc : true;
+        sortState = { key, asc };
+  
+        paginatedData.sort((a, b) => {
+          let valA = a[key];
+          let valB = b[key];
+  
+          if (key === "score" || key === "rgpdScore") {
+            valA = parseFloat(valA) || 0;
+            valB = parseFloat(valB) || 0;
+            return asc ? valA - valB : valB - valA;
+          }
+  
+          if (key === "version" || key === "consentVersion") {
+            const order = { "v1": 1, "v2": 2, "non détecté": 0 };
+            return asc
+              ? (order[valA] || 0) - (order[valB] || 0)
+              : (order[valB] || 0) - (order[valA] || 0);
+          }
+  
+          valA = (valA || "").toString().toLowerCase();
+          valB = (valB || "").toString().toLowerCase();
+          return asc ? valA.localeCompare(valB) : valB.localeCompare(valA);
         });
+  
+        renderCurrentPage(false);
       });
-      
-  
-      
-  
-    // Gestion des boutons page suivante / précédente
-    document.getElementById("prevPage").addEventListener("click", () => {
-      if (currentPage > 1) {
-        currentPage--;
-        renderCurrentPage(isLiveScan);
-      }
     });
   
-    document.getElementById("nextPage").addEventListener("click", () => {
-      if (currentPage < totalPages) {
-        currentPage++;
-        renderCurrentPage(isLiveScan);
-      }
-    });
-
+    // ✅ Fix crash pagination : vérifier l'existence des boutons
+    const prevBtn = document.getElementById("prevPage");
+    const nextBtn = document.getElementById("nextPage");
+  
+    if (prevBtn) {
+      prevBtn.addEventListener("click", () => {
+        if (currentPage > 1) {
+          currentPage--;
+          renderCurrentPage(isLiveScan);
+        }
+      });
+    }
+  
+    if (nextBtn) {
+      nextBtn.addEventListener("click", () => {
+        if (currentPage < totalPages) {
+          currentPage++;
+          renderCurrentPage(isLiveScan);
+        }
+      });
+    }
+  
+    // Réinjection pour affichage
     if (lastScanResults.length > 0) {
-        injectScanResults(lastScanResults, false);
-      }      
-
-}
-  
-  
+      injectScanResults(lastScanResults, false);
+    }
+  } 
   
 // DISPLAY UPDATE
 function injectScanResults(scanData, isLiveScan = true) {
@@ -700,3 +695,39 @@ async function loadHistory() {
   
     loadHistory(); // ✅ Appel direct à la fonction qu’on a définie plus haut
   });
+
+// 🔎 Audit manuel de domaine
+document.getElementById("manualScanForm").addEventListener("submit", async function (e) {
+    e.preventDefault();
+  
+    const url = document.getElementById("manualUrl").value.trim();
+    if (!url) return;
+  
+    // Affichage initial
+    resultsDiv.innerHTML = `<p id="statusMessage">🔍 Scan en cours...</p>`;
+    exportBtn.style.display = "none";
+  
+    try {
+      const response = await fetch("http://localhost:3000/scan", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ urls: [url] })
+      });
+  
+      const scanData = await response.json();
+  
+      if (!Array.isArray(scanData) || !scanData.length) {
+        resultsDiv.innerHTML = `<p style="color:red;">❌ Aucun résultat obtenu pour cette URL.</p>`;
+        return;
+      }
+  
+      // Injecte les résultats comme d’habitude
+      renderPendingResults(scanData, true);
+      exportBtn.style.display = "inline-block";
+  
+    } catch (err) {
+      resultsDiv.innerHTML = `<p style="color:red;">❌ Erreur : ${err.message}</p>`;
+      console.error("Erreur scan manuel :", err);
+    }
+  });
+  
