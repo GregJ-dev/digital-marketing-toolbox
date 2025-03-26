@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Digital Marketing Toolbox - Tracking Scanner</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="container">
+
+    <!-- Titre -->
+    <h1 style="text-align:center; color:#2c3e50;">Tracking Scanner 🔍</h1>
+
+    <!-- Top nav -->
+    <div id="topNav" style="display:flex; justify-content: flex-start; gap: 15px; margin-bottom: 20px;">
+      <button id="scanBtn">🔍 Scanner</button>
+      <button id="historyBtn">📂 Historique</button>
+    </div>
+
+    <!-- Mode toggle (visible que en scan) -->
+    <div id="modeToggle" style="display: flex; gap: 15px; margin-bottom: 20px;">
+      <button id="keywordModeBtn" class="mode-btn selected">🔍 Recherche Google</button>
+      <button id="manualModeBtn" class="mode-btn">🌐 Audit manuel</button>
+    </div>
+
+    <!-- Formulaire Recherche par mot-clé -->
+    <div id="keywordModeSection">
+      <form id="searchForm">
+        <input type="text" id="searchQuery" placeholder="Tape ta requête Google ici..." required>
+        <div id="filterTags">
+          <span class="tag selected" data-type="seo">SEO</span>
+          <span class="tag selected" data-type="ads">Google Ads</span>
+          <span class="tag selected" data-type="shopping">Shopping</span>
+        </div>
+        <button type="submit">Scanner</button>
+      </form>
+    </div>
+
+    <!-- Formulaire Audit manuel -->
+    <div id="manualModeSection" style="display:none;">
+      <form id="manualScanForm">
+        <input type="text" id="manualUrl" placeholder="Ex : https://www.exemple.com" required style="width: 100%; padding: 10px; font-size: 14px; border-radius: 8px; border: 1px solid #ccc;" />
+        <button type="submit" style="margin-top: 10px;">Scanner</button>
+      </form>
+    </div>
+
+    <!-- Résultats -->
+    <div id="results"></div>
+    <button id="exportBtn" style="display:none; margin-top: 20px;">📤 Exporter en CSV</button>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

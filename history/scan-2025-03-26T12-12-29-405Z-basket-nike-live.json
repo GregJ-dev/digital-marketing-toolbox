@@ -1,0 +1,334 @@
+{
+  "query": "basket nike",
+  "date": "2025-03-26T12:12:29.405Z",
+  "type": "live",
+  "results": [
+    {
+      "url": "https://www.nike.com/fr/w/chaussures-y7ok",
+      "consent": false,
+      "consentVersion": "non détecté",
+      "cmp": "Aucune",
+      "rgpdScore": 0,
+      "cms": "Non détecté",
+      "tms": "Adobe Launch",
+      "pixels": "Aucun",
+      "metaDescription": "Découvrez notre collection de baskets et chaussures Nike pour homme, femme et enfant. ."
+    },
+    {
+      "url": "https://www.courir.com/fr/c/marques/nike/",
+      "consent": false,
+      "consentVersion": "non détecté",
+      "cmp": "Aucune",
+      "rgpdScore": 0,
+      "cms": "Non détecté",
+      "tms": "Aucun",
+      "pixels": "Aucun",
+      "metaDescription": "Non détectée"
+    },
+    {
+      "url": "https://www.zalando.fr/nike/",
+      "consent": null
+    },
+    {
+      "url": "https://www.jdsports.fr/marque/nike/p/baskets/",
+      "consent": false,
+      "consentVersion": "non détecté",
+      "cmp": "Aucune",
+      "rgpdScore": 0,
+      "cms": "Non détecté",
+      "tms": "Aucun",
+      "pixels": "TikTok",
+      "metaDescription": "Si tu cherches une basket Nike, tu pourras retrouver tous les modèles les plus emblématiques, comme les Air Force 1, les Air Max ou les Blazer dans cette collection en ligne de JD."
+    },
+    {
+      "url": "https://www.sportsdirect.fr/nike",
+      "consent": null
+    },
+    {
+      "url": "https://www.sneakers.fr/category/nike/",
+      "consent": false,
+      "consentVersion": "non détecté",
+      "cmp": "Aucune",
+      "rgpdScore": 0,
+      "cms": "WordPress",
+      "tms": "Google Tag Manager",
+      "pixels": "Aucun",
+      "metaDescription": "Retrouvez tous nos articles Sneakers Nike sur Sneakers.fr."
+    },
+    {
+      "url": "https://www.stylight.fr/Nike/Chaussures/",
+      "consent": false,
+      "consentVersion": "non détecté",
+      "cmp": "Aucune",
+      "rgpdScore": 0,
+      "cms": "Non détecté",
+      "tms": "Aucun",
+      "pixels": "Aucun",
+      "metaDescription": "Non détectée"
+    },
+    {
+      "url": "https://www.unisportstore.fr/sneakers-nike/",
+      "consent": true,
+      "consentVersion": "v1",
+      "cmp": "Aucune",
+      "rgpdScore": 10,
+      "cms": "Non détecté",
+      "tms": "Google Tag Manager",
+      "pixels": "Aucun",
+      "metaDescription": "Découvrez une énorme sélection de baskets Nike chez Unisport. Nous proposons les modèles sneakers Nike les plus populaires pour homme, femme et enfant. Livraison rapide."
+    },
+    {
+      "url": "https://www.intersport.fr/marques/nike/",
+      "consent": false,
+      "consentVersion": "non détecté",
+      "cmp": "Aucune",
+      "rgpdScore": 0,
+      "cms": "Non détecté",
+      "tms": "Aucun",
+      "pixels": "Aucun",
+      "metaDescription": "Non détectée"
+    },
+    {
+      "url": "https://www.fashiola.fr/nouvelle/homme/chaussures/baskets/?mrk=nike",
+      "consent": true,
+      "consentVersion": "v1",
+      "cmp": "Aucune",
+      "rgpdScore": 10,
+      "cms": "Non détecté",
+      "tms": "Google Tag Manager",
+      "pixels": "Aucun",
+      "metaDescription": "Comparez les dernières tendances de Baskets & Sneakers par Nike pour Hommes et trouvez le prix le moins cher. Achetez les dernières tendances de Baskets & Sneakers par Nike pour Hommes en ligne dans les meilleurs magasins."
+    },
+    {
+      "url": "https://www.footlocker.fr/fr/category/sale/nike.html",
+      "consent": false,
+      "consentVersion": "non détecté",
+      "cmp": "Aucune",
+      "rgpdScore": 0,
+      "cms": "Non détecté",
+      "tms": "Adobe Launch",
+      "pixels": "Aucun",
+      "metaDescription": "Achète des chaussures et vêtements Nike à prix réduit grâce à nos promotions Nike. Profite de réductions in-croy-ables !"
+    },
+    {
+      "url": "https://wethenew.com/collections/nike",
+      "consent": false,
+      "consentVersion": "non détecté",
+      "cmp": "Didomi",
+      "rgpdScore": 40,
+      "cms": "Shopify",
+      "tms": "Google Tag Manager",
+      "pixels": "Aucun",
+      "metaDescription": "Nike, aussi appelée la marque au Swoosh, est une marque de sportswear américaine notamment réputée pour la qualité et le design de ses paires de sneakers."
+    },
+    {
+      "url": "https://www.dmsports.fr/42-chaussures-baskets-homme-nike",
+      "consent": true,
+      "consentVersion": "v1",
+      "cmp": "Aucune",
+      "rgpdScore": 10,
+      "cms": "PrestaShop",
+      "tms": "Aucun",
+      "pixels": "Aucun",
+      "metaDescription": "Retrouvez les emblématiques chaussures Nike sur DM'Sports. Livraison express avec Chronopost."
+    },
+    {
+      "url": "https://www.cdiscount.com/chaussures/r-sneakers+nike.html",
+      "consent": false,
+      "consentVersion": "non détecté",
+      "cmp": "Aucune",
+      "rgpdScore": 0,
+      "cms": "Non détecté",
+      "tms": "Aucun",
+      "pixels": "Aucun",
+      "metaDescription": "Non détectée"
+    },
+    {
+      "url": "https://www.lesitedelasneaker.com/",
+      "consent": false,
+      "consentVersion": "non détecté",
+      "cmp": "Aucune",
+      "rgpdScore": 0,
+      "cms": "WordPress",
+      "tms": "Adobe Launch",
+      "pixels": "Aucun",
+      "metaDescription": "Le Site de la Sneaker, c'est toute l'actu sneakers depuis 2006. Retrouvez toutes les sorties Air Jordan, Nike, New Balance et bien d'autres."
+    },
+    {
+      "url": "https://www.amazon.fr/basket-nike/s?k=basket+nike",
+      "consent": false,
+      "consentVersion": "non détecté",
+      "cmp": "Aucune",
+      "rgpdScore": 0,
+      "cms": "Webflow",
+      "tms": "Adobe Launch",
+      "pixels": "Aucun",
+      "metaDescription": "Non détectée"
+    },
+    {
+      "url": "https://www.sarenza.com/chaussure-nike-homme",
+      "consent": false,
+      "consentVersion": "non détecté",
+      "cmp": "Aucune",
+      "rgpdScore": 0,
+      "cms": "Non détecté",
+      "tms": "Aucun",
+      "pixels": "Aucun",
+      "metaDescription": "Non détectée"
+    },
+    {
+      "url": "https://www.basket4ballers.com/fr/153-basketball?srsltid=AfmBOoqXjUjJPhiBTyTkm-3hMgBXBSoCSDlAPLuBBt460Tq2xAeMlbNj",
+      "consent": false,
+      "consentVersion": "non détecté",
+      "cmp": "Aucune",
+      "rgpdScore": 0,
+      "cms": "PrestaShop",
+      "tms": "Google Tag Manager, Adobe Launch",
+      "pixels": "Aucun",
+      "metaDescription": "Achetez chez basket4ballers, numéro 1 du basket en France, le plus large choix de chaussures de basket performance et signature au meilleur prix"
+    },
+    {
+      "url": "https://www.idealo.fr/cat/18817F1674246/baskets.html",
+      "consent": false,
+      "consentVersion": "non détecté",
+      "cmp": "Aucune",
+      "rgpdScore": 0,
+      "cms": "Non détecté",
+      "tms": "Google Tag Manager",
+      "pixels": "Aucun",
+      "metaDescription": "Non détectée"
+    },
+    {
+      "url": "https://www.decathlon.fr/vc/baskets-nike",
+      "consent": false,
+      "consentVersion": "non détecté",
+      "cmp": "Didomi",
+      "rgpdScore": 40,
+      "cms": "Non détecté",
+      "tms": "Google Tag Manager",
+      "pixels": "Aucun",
+      "metaDescription": "Baskets NIKE à découvrir chez Décathlon à partir de 15 € ✅ Livraison gratuite à partir de 29,99€ ✅ Paiement 3X CB ✅ Echanges et retours"
+    },
+    {
+      "url": "https://www.ebay.fr/b/Baskets-Nike-pour-homme/15709/bn_60286241",
+      "consent": false,
+      "consentVersion": "non détecté",
+      "cmp": "Aucune",
+      "rgpdScore": 0,
+      "cms": "Non détecté",
+      "tms": "Aucun",
+      "pixels": "Aucun",
+      "metaDescription": "Baskets Nike pour homme -  Achetez une variété de produits à prix abordables sur eBay. Economisez avec notre option de livraison gratuite. Achetez en toute confiance et sécurité sur eBay!"
+    },
+    {
+      "url": "https://www.espace-des-marques.com/fr/marques/nike",
+      "consent": false,
+      "consentVersion": "non détecté",
+      "cmp": "Aucune",
+      "rgpdScore": 0,
+      "cms": "Non détecté",
+      "tms": "Google Tag Manager",
+      "pixels": "Aucun",
+      "metaDescription": "Découvrez la marque Nike en promotion sur Espace des marques.com. Vêtements, chaussures et accessoires des plus grandes marques à prix discount. Profitez-en vite les stocks sont limités."
+    },
+    {
+      "url": "https://www.spartoo.com/Basket-Nike-st10157-o4.php",
+      "consent": true,
+      "consentVersion": "v1",
+      "cmp": "Aucune",
+      "rgpdScore": 10,
+      "cms": "Non détecté",
+      "tms": "Aucun",
+      "pixels": "Microsoft Ads",
+      "metaDescription": "Découvrez la collection de basket nike   sur SPARTOO ✓ Livraison Gratuite, Retour Offert ► Commandez au meilleur prix vos basket nike   avec SPARTOO !"
+    },
+    {
+      "url": "https://fr.shopping.rakuten.com/nav/Mode_chaussures/f1/Baskets/f3/Nike",
+      "consent": false,
+      "consentVersion": "non détecté",
+      "cmp": "Aucune",
+      "rgpdScore": 0,
+      "cms": "Non détecté",
+      "tms": "Aucun",
+      "pixels": "Aucun",
+      "metaDescription": "Non détectée"
+    },
+    {
+      "url": "https://www.asos.com/fr/homme/a-to-z-of-brands/nike/refine/baskets/cat/?cid=4766&refine=attribute_1047:8606",
+      "consent": false,
+      "consentVersion": "non détecté",
+      "cmp": "Aucune",
+      "rgpdScore": 0,
+      "cms": "Non détecté",
+      "tms": "Aucun",
+      "pixels": "Aucun",
+      "metaDescription": "Non détectée"
+    },
+    {
+      "url": "https://limitedresell.com/60-nike",
+      "consent": false,
+      "consentVersion": "non détecté",
+      "cmp": "Aucune",
+      "rgpdScore": 0,
+      "cms": "Non détecté",
+      "tms": "Aucun",
+      "pixels": "Aucun",
+      "metaDescription": "Non détectée"
+    },
+    {
+      "url": "https://www.sport2000.fr/taxons/sport-2000/selection-femme-sport-2000/chaussures-femme/sneakers-baskets-femme",
+      "consent": false,
+      "consentVersion": "non détecté",
+      "cmp": "Axeptio",
+      "rgpdScore": 40,
+      "cms": "Non détecté",
+      "tms": "Google Tag Manager",
+      "pixels": "TikTok",
+      "metaDescription": "Découvrir notre sélection de Sneakers, Baskets Femme chez SPORT 2000. La garantie de produits de marque de qualité !"
+    },
+    {
+      "url": "https://www.sivasdescalzo.com/fr/marques/nike/baskets?srsltid=AfmBOooLkNmDdc1cIySJBEkNfiJ-fZWybaeXufThuauABNueIVrEYVf6",
+      "consent": false,
+      "consentVersion": "non détecté",
+      "cmp": "Aucune",
+      "rgpdScore": 0,
+      "cms": "Non détecté",
+      "tms": "Aucun",
+      "pixels": "Aucun",
+      "metaDescription": "Non détectée"
+    },
+    {
+      "url": "https://www.usine23.com/baskets-homme/nike",
+      "consent": false,
+      "consentVersion": "non détecté",
+      "cmp": "Aucune",
+      "rgpdScore": 0,
+      "cms": "Non détecté",
+      "tms": "Aucun",
+      "pixels": "Aucun",
+      "metaDescription": "Baskets  homme Nike pas cher en vente actuellement sur usine23.com. Faîtes votre choix parmis nos Baskets  homme Nike. Livraison gratuite dès 75€ d'achat*."
+    },
+    {
+      "url": "https://www.lyst.com/fr-fr/parcourir/baskets-nike-pour-homme/",
+      "consent": false,
+      "consentVersion": "non détecté",
+      "cmp": "OneTrust",
+      "rgpdScore": 40,
+      "cms": "Non détecté",
+      "tms": "Aucun",
+      "pixels": "Google Ads",
+      "metaDescription": "Découvrez les Baskets Nike homme. 8 415 articles en promotion à partir de 74 €. La plus grande sélection de nouveautés et d'offres seulement sur Lyst.com. Livraison et retours gratuits disponibles."
+    },
+    {
+      "url": "https://www.whentocop.fr/sneakers/nike",
+      "consent": false,
+      "consentVersion": "non détecté",
+      "cmp": "Aucune",
+      "rgpdScore": 0,
+      "cms": "Non détecté",
+      "tms": "Google Tag Manager",
+      "pixels": "Aucun",
+      "metaDescription": "Découvrez les sneakers Nike pour hommes et femmes : style, confort et performance réunis dans des baskets incontournables."
+    }
+  ]
+}

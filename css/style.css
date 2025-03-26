@@ -1,0 +1,128 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  max-width: 1000px;
+  margin: 50px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+h1 {
+  text-align: center;
+  color: #2c3e50;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 30px;
+}
+input[type="text"] {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+#filterTags {
+  margin-top: 10px;
+}
+.tag {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 6px 12px;
+  background-color: #eee;
+  color: #333;
+  border-radius: 20px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 14px;
+}
+.tag.selected {
+  background-color: #3498db;
+  color: white;
+  font-weight: bold;
+}
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #2980b9;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 14px;
+}
+th {
+  text-align: center;
+}
+td {
+  text-align: center;
+  padding: 8px;
+  border-bottom: 1px solid #ccc;
+}
+td:first-child {
+  text-align: left;
+}
+a {
+  color: #2c3e50;
+  text-decoration: none;
+}
+.expand-toggle {
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+}
+.details-row {
+  background-color: #f4f4f4;
+  font-style: italic;
+  display: none;
+}
+.details-row.open {
+  display: table-row;
+}
+.meta-cell {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    word-break: break-word;
+    max-width: 800px;
+}
+
+#resultTable td,
+#resultTable th {
+  padding: 8px;
+  text-align: center;
+}
+
+#resultTable td:nth-child(n+3):nth-child(-n+9),
+#resultTable th:nth-child(n+3):nth-child(-n+9) {
+  width: 70px;
+}
+
+.mode-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    background: #eee;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .mode-btn.selected {
+    background: #3498db;
+    color: white;
+    font-weight: bold;
+  }
+  

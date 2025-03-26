@@ -1,0 +1,8 @@
+# Fichiers/dossiers à ignorer
+node_modules/
+.history/
+.vscode/
+.cache/
+*.log
+.DS_Store
+.env
