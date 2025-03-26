@@ -77,13 +77,31 @@ app.post("/scan", async (req, res) => {
   try {
     const results = await scanUrls(urls);
 
-    const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
-    const safeQuery = query.toLowerCase().replace(/[^a-z0-9]+/g, "-").substring(0, 30);
-    const filename = `scan-${timestamp}-${safeQuery}-${type}.json`;
+    results.forEach(r => r.type = type); // injecte le type directement dans chaque résultat
+
+    const now = new Date();
+
+    // 🔒 Préparation du nom de fichier
+    const timestamp = now.toISOString();
+    const datePart = timestamp.split("T")[0].replace(/-/g, "");
+    const timePart = timestamp.split("T")[1].split("Z")[0].replace(/:/g, "").slice(0, 6);
+
+    const identifier = type === "manual"
+      ? (urls[0] || "unknown")
+          .replace(/^https?:\/\//, "")
+          .replace(/[^a-z0-9]/gi, "_")
+          .toLowerCase()
+          .substring(0, 40)
+      : query
+          .replace(/[^a-z0-9]/gi, "_")
+          .toLowerCase()
+          .substring(0, 40);
+
+    const filename = `scan-${type}-${identifier}-${datePart}-${timePart}.json`;
 
     const historyData = {
       query,
-      date: new Date().toISOString(),
+      date: now.toISOString(),
       type,
       results
     };
@@ -97,6 +115,7 @@ app.post("/scan", async (req, res) => {
     res.status(500).json({ error: "Erreur lors du scan", details: err.message });
   }
 });
+
 
 // 📁 Liste des fichiers d'historique
 app.get("/history", (req, res) => {

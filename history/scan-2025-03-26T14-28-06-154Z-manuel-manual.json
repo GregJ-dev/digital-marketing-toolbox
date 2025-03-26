@@ -1,0 +1,18 @@
+{
+  "query": "manuel",
+  "date": "2025-03-26T14:28:06.154Z",
+  "type": "manual",
+  "results": [
+    {
+      "url": "https://www.junto.fr",
+      "consent": false,
+      "consentVersion": "non détecté",
+      "cmp": "Aucune",
+      "rgpdScore": 0,
+      "cms": "Non détecté",
+      "tms": "Google Tag Manager",
+      "pixels": "Aucun",
+      "metaDescription": "Junto est à la pointe du growth marketing et de l'acquisition. Nous transformons nos clients Ecommerce, Saas, Lead Gen, en leader du marché"
+    }
+  ]
+}
